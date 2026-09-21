@@ -254,4 +254,4 @@ and the outline brightens to distinguish it from GitHub links.
 | Vite 5 | Build tool & dev server |
 | Lucide React | Icon library |
 | CSS (plain) | All styling — no framework, CSS custom properties |
-| Anthropic Claude | Powers the optional AI chat widget |
+| Gemini | Powers the optional AI chat widget |

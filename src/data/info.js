@@ -24,8 +24,6 @@ export const INFO_ITEMS = [
   { Icon: GraduationCap,  label: 'BS Artificial Intelligence' },
   { Icon: Building2,      label: 'DHA Suffa University' },
   { Icon: Briefcase,      label: 'Backend AI Engineer @ FlyrankAI' },
-  { Icon: Code2,          label: 'Backend Development' },
-  { Icon: BrainCircuit,   label: 'AI/ML Development' },
-  { Icon: Zap,            label: 'LLM & RAG Enthusiast' },
-  { Icon: Terminal,       label: 'Competitive Programmer' },
+  { Icon: Code2,          label: 'Full Stack AI Engineer' },
+  { Icon: Code2,          label: 'Polyglot Developer' },
 ]

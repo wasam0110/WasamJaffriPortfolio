@@ -1,16 +1,31 @@
-// ═══════════════════════════════════════════════════════════════
-// src/data/extras.js
-//
-// Extracurricular activity cards.
-// Same pattern as info.js — Icon component reference + text.
-// ═══════════════════════════════════════════════════════════════
-import { Trophy, Dumbbell, Activity } from 'lucide-react'
+import {
+  GiCricketBat,
+  GiShuttlecock,
+  GiSoccerBall,
+  GiWeightLiftingUp,
+  GiTennisRacket,
+} from 'react-icons/gi';
 
 /** @type {{ Icon: React.ComponentType<any>, text: string }[]} */
 export const EXTRAS = [
-  { Icon: Trophy,   text: 'Runner-Up – 15th DSU Inter-Dept Box Cricket Championship 2025 (Captain)' },
-  { Icon: Activity, text: 'Badminton' },
-  { Icon: Activity, text: 'Football' },
-  { Icon: Activity, text: 'Table Tennis' },
-  { Icon: Dumbbell, text: 'Gym' },
-]
+  {
+    Icon: GiCricketBat,
+    text: 'Runner-Up – 15th DSU Inter-Dept Box Cricket Championship 2025 (Captain)',
+  },
+  {
+    Icon: GiShuttlecock,
+    text: 'Badminton',
+  },
+  {
+    Icon: GiSoccerBall,
+    text: 'Football',
+  },
+  {
+    Icon: GiTennisRacket,
+    text: 'Table Tennis',
+  },
+  {
+    Icon: GiWeightLiftingUp,
+    text: 'Gym',
+  },
+];

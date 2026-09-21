@@ -8,9 +8,9 @@
 
 /** @type {{ ico: string, name: string }[]} */
 export const CERTS = [
-  { ico: 'Az', name: 'Microsoft Azure AI Fundamentals' },
-  { ico: 'Az', name: 'Microsoft Azure Data Fundamentals' },
+  { ico: 'M', name: 'Microsoft Azure AI Fundamentals' },
+  { ico: 'M', name: 'Microsoft Azure Data Fundamentals' },
   { ico: 'CS', name: 'CS50x Puzzles (2025)' },
-  { ico: 'MT', name: 'MIT Tournament of Codes' },
-  { ico: 'IE', name: 'Speed Debugging – IEEE PSYWSC 2025' },
+  { ico: 'MIT', name: 'MIT Tournament of Codes' },
+  { ico: 'IEEE', name: 'Speed Debugging – IEEE PSYWSC 2025' },
 ]

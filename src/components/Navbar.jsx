@@ -45,7 +45,11 @@ export default function Navbar({ scrollY, menuOpen, setMenuOpen }) {
           onKeyDown={e => e.key === 'Enter' && window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Scroll to top"
         >
-          SMW
+        <img
+          src="public/logo.png.png"
+          alt="Syed Wasam Jaffri"
+          style={{ height: 40, width: 'Auto' }}
+        />
         </div>
 
         {/* Desktop links (hidden on mobile via CSS) */}

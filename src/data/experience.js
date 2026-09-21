@@ -32,19 +32,4 @@ export const EXPERIENCE = [
     ],
     tags: ['Python', 'FastAPI', 'LLM', 'RAG', 'FAISS', 'NLP'],
   },
-  {
-    role:     'Chief Executive Officer',
-    company:  'VisualBite3D',
-    type:     'Founder',
-    location: 'Karachi, Pakistan',
-    period:   '2023 – Present',
-    desc:     'Founded a Karachi startup delivering web-based 3D interactive restaurant menus via QR code for the F&B industry.',
-    bullets: [
-      'Leading product strategy, client acquisition, and full-stack technical development',
-      'Built 3D menu platform using Three.js and React for immersive dining experiences',
-      'Onboarding restaurants across Karachi with QR-based interactive 3D menus',
-      'Managing a cross-functional team across design, development, and business',
-    ],
-    tags: ['React', 'Three.js', 'Node.js', 'Product', 'Strategy'],
-  },
 ]

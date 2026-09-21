@@ -47,7 +47,7 @@ export default function Hero() {
 
         {/* ── Full name ─────────────────────────────────────── */}
         <h1 className="hero-name fi1">
-          SYED MUHAMMAD<br />WASAM MEHDI JAFFRI
+          SYED WASAM  JAFFRI
         </h1>
 
         {/* ── Typewriter role ───────────────────────────────── */}

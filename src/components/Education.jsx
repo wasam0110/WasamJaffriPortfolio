@@ -21,11 +21,17 @@ const EDUCATION = {
   // Courses shown as small tag pills
   courses: [
     'Data Structures & Algorithms',
+    'Object-Oriented Programming',
+    'Artificial Neural Networks',
     'Machine Learning',
     'Computer Vision',
-    'NLP',
+    'Natural Language Processing',
     'Deep Learning',
     'Databases',
+    'Calculus',
+    'Linear Algebra',
+    'Probability & Stats',
+    'Data Mining',
   ],
 }
 
