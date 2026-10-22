@@ -17,7 +17,7 @@ const EDUCATION = {
   institution: 'DHA Suffa University',
   location:    'Karachi, Pakistan',
   period:      'Oct 2023 – Present',
-  rollNo:      'AI231001',
+  cgpa:        '3.1',
   // Courses shown as small tag pills
   courses: [
     'Data Structures & Algorithms',
@@ -84,7 +84,7 @@ export default function Education() {
                 {EDUCATION.institution}, {EDUCATION.location}
               </div>
               <div className="edu-meta">
-                {EDUCATION.period} · Roll No: {EDUCATION.rollNo}
+                {EDUCATION.period} · CGPA: {EDUCATION.cgpa}
               </div>
 
               {/* Course tag pills */}

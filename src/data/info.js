@@ -13,9 +13,6 @@ import {
   Building2,
   Briefcase,
   Code2,
-  BrainCircuit,
-  Zap,
-  Terminal,
 } from 'lucide-react'
 
 /** @type {{ Icon: React.ComponentType<any>, label: string }[]} */

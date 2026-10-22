@@ -1,93 +1,79 @@
-// ═══════════════════════════════════════════════════════════════
-// src/data/projects.js
-//
-// All project entries for the Projects section.
-//
-// Fields:
-//   feat   → true = shown as a large "Featured" card (top row)
-//            false = shown in the compact secondary grid below
-//   name   → project name; also used as the GitHub repo slug
-//   desc   → one-sentence description shown on the card
-//   badges → tech stack pills
-//   demo   → (optional) live demo URL shown as "Live Demo ↗" button
-//            when absent, the View button links to GitHub instead
-//
-// To add a project: push a new object to this array.
-// To feature a project: set feat: true (keep featured count at 3).
-// To add a live link: add demo: 'https://...' to the entry.
-// ═══════════════════════════════════════════════════════════════
-
-/** @type {{ feat:boolean, name:string, desc:string, badges:string[], demo?:string }[]} */
+// Exactly the nine repositories requested, described from public source and the supplied CV.
+/** @type {{ feat:boolean, name:string, repo:string, desc:string, badges:string[], categories:string[], status?:string, demo?:string }[]} */
 export const PROJECTS = [
-  // ── Featured (top row, larger cards) ──────────────────────────
   {
-    feat:   true,
-    name:   'JobBridgeAI',
-    desc:   'AI-powered job matching and recommendation platform using LLMs and semantic search.',
-    badges: ['Python', 'LLM', 'FastAPI', 'RAG', 'NLP'],
+    feat: false,
+    name: 'DripMarketplace',
+    repo: 'DripMarketplace',
+    status: 'In progress',
+    desc: 'WearHowZ is a multi-vendor streetwear marketplace under development, with a layered FastAPI backend, PostgreSQL/Supabase, JWT authentication, seller and buyer roles, order flows, and payment integrations.',
+    badges: ['Python', 'FastAPI', 'PostgreSQL', 'Supabase', 'JWT', 'Docker', 'Next.js 15'],
+    categories: ['Backend', 'Web & Data'],
   },
   {
-    feat:   true,
-    name:   'Rag-Document-Cataloger',
-    desc:   'RAG-powered intelligent document cataloging and retrieval system using FAISS embeddings.',
-    badges: ['Python', 'RAG', 'FAISS', 'Embeddings', 'LLM'],
+    feat: false,
+    name: 'SpendSmart-FinanceTrackingApp',
+    repo: 'SpendSmart-FinanceTrackingApp',
+    desc: 'A PHP and vanilla JavaScript finance tracker with account and guest modes, income and expense records, editable categories, per-transaction currencies, and JSON-backed storage.',
+    badges: ['PHP', 'JavaScript', 'JSON', 'Finance'],
+    categories: ['Web & Data'],
+    demo: 'https://spendsmart.infinityfree.me/dashboard.php#overview',
   },
   {
-    feat:   true,
-    name:   'VirtualPaint',
-    desc:   'Real-time computer vision virtual painting via hand gesture recognition — no hardware needed.',
-    badges: ['Python', 'OpenCV', 'Computer Vision', 'CV'],
-  },
-
-  // ── Regular (compact secondary grid) ──────────────────────────
-  {
-    feat:   false,
-    name:   'CryptoPredictionModel',
-    desc:   'ML model for cryptocurrency trend prediction and signal generation.',
-    badges: ['Python', 'XGBoost', 'LightGBM', 'Pandas'],
+    feat: false,
+    name: 'Agri-feed-price-system-java',
+    repo: 'Agri-feed-price-system-java',
+    desc: 'A Java console application that reads feed-price records from CSV, finds recent prices, compares year-on-year changes, and calculates 12-month profit/loss scenarios.',
+    badges: ['Java', 'CSV', 'JUnit', 'QuickChart'],
+    categories: ['Backend', 'Web & Data'],
   },
   {
-    feat:   false,
-    name:   'Surgery-Management-System-Java',
-    desc:   'Full-featured Java surgery and hospital management system with OOP architecture.',
-    badges: ['Java', 'MySQL', 'OOP', 'Backend'],
+    feat: false,
+    name: 'JobBridgeAI',
+    repo: 'JobBridgeAI',
+    desc: 'A job-readiness app with a CV analyzer, role-based mock interview practice, LinkedIn-summary rewriting, and skills-gap review, using a FastAPI backend, React frontend, and Groq API.',
+    badges: ['Python', 'FastAPI', 'React', 'Groq API', 'SQLite'],
+    categories: ['AI & ML', 'Backend', 'Web & Data'],
   },
   {
-    feat:   false,
-    name:   'SpendSmart-FinanceTrackingApp',
-    desc:   'Personal finance tracking and smart expense management dashboard.',
-    badges: ['Python', 'Streamlit', 'MySQL'],
-    // Live deployment — "View ↗" becomes "Live Demo ↗" when this is set
-    demo:   'https://spendsmart.infinityfree.me/dashboard.php#overview',
+    feat: false,
+    name: 'CryptoPredictionModel',
+    repo: 'CryptoPredictionModel',
+    status: 'Prototype',
+    desc: 'A cryptocurrency forecasting prototype combining LSTM, XGBoost, and SARIMA models, with a FastAPI service and browser dashboard for data and predictions.',
+    badges: ['Python', 'LSTM', 'XGBoost', 'SARIMA', 'FastAPI'],
+    categories: ['AI & ML', 'Backend', 'Web & Data'],
   },
   {
-    feat:   false,
-    name:   'CHATBOT',
-    desc:   'AI-powered chatbot with conversational intelligence and contextual response capabilities.',
-    badges: ['Python', 'NLP', 'LLM', 'Transformers'],
+    feat: false,
+    name: 'Surgery-Management-System-Java',
+    repo: 'Surgery-Management-System-Java',
+    desc: 'A Java project demonstrating constructor-based dependency injection, a persistence interface, Java serialization and Gson storage implementations, and JUnit tests.',
+    badges: ['Java', 'Gson', 'Dependency Injection', 'JUnit'],
+    categories: ['Backend'],
   },
   {
-    feat:   false,
-    name:   'ChurnPredictionSystem',
-    desc:   'Customer churn prediction with SHAP-based explainability for business insights.',
-    badges: ['Python', 'Scikit-learn', 'SHAP', 'XGBoost'],
+    feat: false,
+    name: 'ChurnPredictionSystem',
+    repo: 'ChurnPredictionSystem',
+    desc: 'An end-to-end telco churn project with feature engineering, calibrated model training, cost-sensitive thresholds, FastAPI prediction and what-if endpoints, a Streamlit dashboard, and drift-monitoring utilities.',
+    badges: ['Python', 'Scikit-learn', 'XGBoost', 'LightGBM', 'FastAPI', 'Streamlit', 'SHAP'],
+    categories: ['AI & ML', 'Backend', 'Web & Data'],
   },
   {
-    feat:   false,
-    name:   'AI_PORTFOLIO_Maker',
-    desc:   'AI-based automated portfolio generation platform with content intelligence.',
-    badges: ['Python', 'LLM', 'FastAPI', 'GenAI'],
+    feat: false,
+    name: 'Rag-Document-Cataloger',
+    repo: 'Rag-Document-Cataloger',
+    desc: 'A FastAPI document Q&A system with PDF, DOCX, TXT, and CSV ingestion, semantic chunking, FAISS retrieval, BAAI/bge embeddings, Flan-T5 answers, and citations.',
+    badges: ['Python', 'FastAPI', 'FAISS', 'BAAI/bge', 'Flan-T5', 'SQLite', 'JWT'],
+    categories: ['AI & ML', 'Backend'],
   },
   {
-    feat:   false,
-    name:   'SpamEmailClassifier',
-    desc:   'High-accuracy ML spam email detection and filtering system.',
-    badges: ['Python', 'NLP', 'Scikit-learn', 'MLflow'],
-  },
-  {
-    feat:   false,
-    name:   'Agri-feed-price-system-java',
-    desc:   'Agriculture feed pricing and inventory management application.',
-    badges: ['Java', 'SQLite', 'Backend', 'Algorithms'],
+    feat: false,
+    name: 'VirtualPaint',
+    repo: 'VirtualPaint',
+    desc: 'A Python desktop virtual painter that uses a webcam and MediaPipe hand landmarks to draw, switch colors, erase, clear the canvas, and save drawings.',
+    badges: ['Python', 'OpenCV', 'MediaPipe', 'NumPy', 'Tkinter'],
+    categories: ['AI & ML', 'Computer Vision'],
   },
 ]

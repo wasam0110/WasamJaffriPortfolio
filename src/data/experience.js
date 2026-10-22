@@ -1,35 +1,18 @@
-// ═══════════════════════════════════════════════════════════════
-// src/data/experience.js
-//
 // Work experience entries shown in the Experience section.
-// Each entry renders as a card on the timeline.
-//
-// Fields:
-//   role     → job title displayed in Cinzel serif
-//   company  → employer name in monospace gold
-//   type     → "Full-time" | "Founder" | "Part-time" etc.
-//   location → city / remote
-//   period   → display string for date range
-//   desc     → one-sentence summary of the role
-//   bullets  → 3-4 specific achievements shown as → list
-//   tags     → tech/skill chips at the bottom of the card
-// ═══════════════════════════════════════════════════════════════
-
-/** @type {{ role:string, company:string, type:string, location:string, period:string, desc:string, bullets:string[], tags:string[] }[]} */
 export const EXPERIENCE = [
   {
-    role:     'Backend AI Engineer',
-    company:  'FlyrankAI',
-    type:     'Full-time',
-    location: 'Remote',
-    period:   '2024 – Present',
-    desc:     'Building AI-powered content ranking and generation systems using LLMs, RAG architectures, and scalable Python backends.',
+    role: 'Backend AI Engineer',
+    company: 'FlyrankAI',
+    location: 'Karachi, Pakistan',
+    period: 'Jul 2026 – Oct 2026',
+    desc: 'Built backend AI services and LLM workflows for semantic search, knowledge retrieval, and production model integration.',
     bullets: [
-      'Designed FastAPI microservices powering AI content generation pipelines in production',
-      'Built RAG systems with FAISS vector stores for semantic document retrieval and ranking',
-      'Integrated LLM APIs for automated content scoring and generation workflows',
-      'Optimised async backend performance, reducing API response times by ~40%',
+      'Integrated vector databases for semantic search and knowledge retrieval, improving query relevance across production backend AI services',
+      'Optimized prompt templates to reduce token usage and API costs using structured output constraints and few-shot compression',
+      'Evaluated LLM latency, accuracy, and cost to inform model-selection decisions',
+      'Integrated external APIs, databases, and AI models into FastAPI and Python backend services',
+      'Improved AI response quality and consistency through iterative prompt engineering and workflow optimization',
     ],
-    tags: ['Python', 'FastAPI', 'LLM', 'RAG', 'FAISS', 'NLP'],
+    tags: ['Python', 'FastAPI', 'LLMs', 'Vector Search', 'Prompt Engineering'],
   },
 ]

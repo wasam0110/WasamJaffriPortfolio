@@ -1,121 +1,84 @@
-// ═══════════════════════════════════════════════════════════════
-// src/components/Hero.jsx
-//
-// Full-viewport landing section — the first thing visitors see.
-//
-// USES:
-//   useTypewriter() — returns the animated partial role string
-//   scrollToSection() — smooth-scrolls to other sections
-//
-// The .fi / .fi1–.fi4 classes in main.css stagger the entrance
-// of each block: badge → name → role → bio → buttons.
-//
-// SECURITY:
-//   All href values are hardcoded strings from this file.
-//   External links use rel="noreferrer noopener" to prevent
-//   the linked page from accessing window.opener (tab-napping).
-// ═══════════════════════════════════════════════════════════════
-import { Github, Linkedin, Download } from 'lucide-react'
-import { useTypewriter }   from '../hooks/useTypewriter'
+import { Github, Linkedin, Search, Database, Sparkles } from 'lucide-react'
 import { scrollToSection } from '../utils/scroll'
+import Magnetic from './Magnetic'
+import ResumePreview from './ResumePreview'
+
+const workflow = [
+  { label: 'Understand the question', detail: 'Query', Icon: Search },
+  { label: 'Find useful context', detail: 'Retrieve', Icon: Database },
+  { label: 'Shape a useful answer', detail: 'Generate', Icon: Sparkles },
+]
+
+function tiltWorkflow(event) {
+  if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  const card = event.currentTarget
+  const bounds = card.getBoundingClientRect()
+  const x = (event.clientX - bounds.left) / bounds.width
+  const y = (event.clientY - bounds.top) / bounds.height
+  card.style.setProperty('--tilt-x', `${(0.5 - y) * 3}deg`)
+  card.style.setProperty('--tilt-y', `${(x - 0.5) * 3}deg`)
+}
+
+function resetWorkflowTilt(event) {
+  event.currentTarget.style.setProperty('--tilt-x', '0deg')
+  event.currentTarget.style.setProperty('--tilt-y', '0deg')
+}
 
 export default function Hero() {
-  const displayed = useTypewriter()
-
   return (
     <section className="hero" id="home">
-
-      {/* Subtle hex-grid background texture */}
-      <div className="hex-bg" aria-hidden="true" />
-
-      <div style={{ maxWidth: 780, margin: '0 auto' }}>
-
-        {/* ── Badge pill ────────────────────────────────────── */}
-        <div className="fi">
-          <div className="hero-tag">
-            <span
-              aria-hidden="true"
-              style={{
-                width: 6, height: 6, borderRadius: '50%',
-                background: 'var(--gold)', display: 'inline-block',
-                boxShadow: '0 0 8px var(--gold)',
-              }}
-            />
-            AI · ML · Backend · GenAI
+      <div className="hero-copy">
+        <div className="hero-tag"><span aria-hidden="true" />AI engineer · Karachi, Pakistan</div>
+        <h1 className="hero-name"><span>Syed Wasam</span><span className="hero-name-accent">Jaffri</span></h1>
+        <div className="hero-role">I build practical AI and backend systems.</div>
+        <p className="hero-bio">
+          I work across machine learning, retrieval systems, and backend engineering—turning ideas into useful, reliable software.
+        </p>
+        <div className="hero-btns">
+          <Magnetic><button className="btn btn-g" onClick={() => scrollToSection('projects')}>View projects</button></Magnetic>
+          <button className="btn btn-o" onClick={() => scrollToSection('experience')}>Experience</button>
+          <ResumePreview />
+          <div className="hero-socials">
+            <a href="https://github.com/wasam0110" target="_blank" rel="noreferrer noopener" className="btn btn-o" aria-label="GitHub profile"><Github size={14} />GitHub</a>
+            <a href="https://www.linkedin.com/in/syed-wasam-jaffri" target="_blank" rel="noreferrer noopener" className="btn btn-o" aria-label="LinkedIn profile"><Linkedin size={14} />LinkedIn</a>
           </div>
         </div>
+      </div>
 
-        {/* ── Full name ─────────────────────────────────────── */}
-        <h1 className="hero-name fi1">
-          SYED WASAM  JAFFRI
-        </h1>
-
-        {/* ── Typewriter role ───────────────────────────────── */}
-        <div className="hero-role fi2" aria-live="polite" aria-atomic="true">
-          <span aria-hidden="true" style={{ color: 'rgba(212,175,55,.4)', marginRight: 6 }}>▸</span>
-          {displayed}
-          {/* Blinking cursor — @keyframes blink in main.css */}
-          <span className="cursor" aria-hidden="true">_</span>
+      <div className="hero-visual" aria-label="Illustration of an AI retrieval workflow">
+        <div className="workflow-art tilt-card" onPointerMove={tiltWorkflow} onPointerLeave={resetWorkflowTilt}>
+          <div className="workflow-head">
+            <span>RETRIEVAL-AUGMENTED GENERATION</span>
+            <span className="workflow-index">01 — 03</span>
+          </div>
+          <div className="workflow-body">
+            <div className="workflow-rail" aria-hidden="true"><span /></div>
+            <div className="workflow-steps">
+              {workflow.map(({ label, detail, Icon }, index) => (
+                <div className={`workflow-step step-${index + 1}`} key={detail}>
+                  <div className="workflow-icon"><Icon size={17} strokeWidth={1.6} /></div>
+                  <div className="workflow-copy"><span>{detail}</span><strong>{label}</strong></div>
+                  <span className="workflow-number">0{index + 1}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="workflow-foot"><span className="workflow-status" />A simple path from question to answer</div>
+          <div className="art-corner art-corner-tl" /><div className="art-corner art-corner-br" />
         </div>
-
-        {/* ── Bio ───────────────────────────────────────────── */}
-        <p className="hero-bio fi3">
-          AI and Machine Learning practitioner with strong foundations in Data
-          Structures, Algorithms, backend development, and AI-driven
-          applications. Passionate about LLMs, RAG systems, and solving
-          real-world problems through technology.
-        </p>
-
-        {/* ── CTA buttons ───────────────────────────────────── */}
-        <div className="hero-btns fi4">
-          <button
-            className="btn btn-g"
-            onClick={() => scrollToSection('experience')}
-          >
-            <span>View Experience</span>
-          </button>
-
-          <button
-            className="btn btn-o"
-            onClick={() => scrollToSection('projects')}
-          >
-            <span>Projects</span>
-          </button>
-
-          {/* Resume — update href to your actual CV PDF path */}
-          <a
-            href="/WasamJaffri_Resume.pdf"
-            download
-            className="btn btn-o"
-            aria-label="Download resume PDF"
-          >
-            <Download size={13} />
-            <span>Resume</span>
-          </a>
-
-          <a
-            href="https://github.com/wasam0110"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="btn btn-o"
-            aria-label="GitHub profile"
-          >
-            <Github size={13} />
-            <span>GitHub</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/syed-wasam-jaffri"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="btn btn-o"
-            aria-label="LinkedIn profile"
-          >
-            <Linkedin size={13} />
-            <span>LinkedIn</span>
-          </a>
+        <div className="visual-caption"><span>01 / A working system</span><span>AI · Retrieval · Backend</span></div>
+        <div className="hero-ticker" aria-label="Areas of focus: machine learning, retrieval, backend systems">
+          <span className="ticker-label">FOCUS</span>
+          <div className="ticker-window" aria-hidden="true">
+            <div className="ticker-track">
+              {[0, 1].map((copy) => (
+                <span className="ticker-run" key={copy}>
+                  <span>Machine learning</span><i>·</i><span>Retrieval systems</span><i>·</i><span>Backend engineering</span><i>·</i><span>Applied AI</span><i>·</i>
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   )

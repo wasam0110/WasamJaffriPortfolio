@@ -3,45 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="public/favicon.ico.png" />
-    <!-- ─────────────────────────────────────────────────────────────────
-         SECURITY — Content Security Policy
-         Restricts what resources the page can load.
-         Update 'connect-src' if you add a backend API for the chat widget.
-         ───────────────────────────────────────────────────────────────── -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Content Security Policy for the static portfolio and contact form. -->
     <meta
       http-equiv="Content-Security-Policy"
       content="
         default-src 'self';
         script-src  'self' 'unsafe-inline';
-        style-src   'self' 'unsafe-inline' https://fonts.googleapis.com;
-        font-src    'self' https://fonts.gstatic.com;
+        style-src   'self' 'unsafe-inline';
+        font-src    'self' data:;
         img-src     'self' data:;
-        connect-src 'self' https://api.anthropic.com;
+        connect-src 'self' https://formsubmit.co;
       "
     />
 
-    <!-- ─── Google Fonts (loaded in <head> for best performance) ──────── -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>Syed Wasam Jaffri — AI Engineer & Backend Developer</title>
+    <meta name="description" content="Syed Wasam Jaffri is an AI engineer in Karachi, Pakistan, working on machine learning, retrieval-augmented generation, and backend systems." />
+    <meta name="author" content="Syed Wasam Jaffri" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <link rel="canonical" href="https://wasam-jaffri-portfolio.vercel.app/" />
 
-    <!-- ─── Open Graph — controls link preview on LinkedIn / WhatsApp ─── -->
-    <!-- Replace the image URL with a real 1200×630px screenshot once live -->
-    <meta property="og:title"       content="Wasam Jaffri | AI Engineer" />
-    <meta property="og:description" content="AI Engineer · ML Practitioner · Backend Developer based in Karachi" />
-    <meta property="og:image"       content="/og-preview.png" />
-    <meta property="og:url"         content="https://wasamjaffri.dev" />
-    <meta name="twitter:card"       content="summary_large_image" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Syed Wasam Jaffri" />
+    <meta property="og:title" content="Syed Wasam Jaffri — AI Engineer & Backend Developer" />
+    <meta property="og:description" content="AI engineer in Karachi, Pakistan, building practical machine-learning, retrieval, and backend systems." />
+    <meta property="og:url" content="https://wasam-jaffri-portfolio.vercel.app/" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Syed Wasam Jaffri — AI Engineer" />
+    <meta name="twitter:description" content="AI engineer in Karachi, Pakistan, building practical machine-learning, retrieval, and backend systems." />
 
-    <title>Wasam Jaffri | AI Engineer</title>
-    <meta
-      name="description"
-      content="Portfolio of Syed Muhammad Wasam Mehdi Jaffri — AI Engineer, ML Practitioner, Backend Developer based in Karachi, Pakistan."
-    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Syed Wasam Jaffri",
+        "jobTitle": "AI Engineer",
+        "url": "https://wasam-jaffri-portfolio.vercel.app/",
+        "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
+        "sameAs": ["https://github.com/wasam0110", "https://www.linkedin.com/in/syed-wasam-jaffri"]
+      }
+    </script>
   </head>
   <body>
     <!-- React mounts the entire application here -->
