@@ -49,11 +49,12 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  {/* Status pills */}
-                  <div className="exp-pills">
-                    <span className="pill pill-active">Active</span>
-                    <span className="pill pill-type">{job.type}</span>
-                  </div>
+                  {(job.status || job.type) && (
+                    <div className="exp-pills">
+                      {job.status && <span className={`pill${job.status === 'Active' ? ' pill-active' : ' pill-type'}`}>{job.status}</span>}
+                      {job.type && <span className="pill pill-type">{job.type}</span>}
+                    </div>
+                  )}
                 </div>
 
                 {/* ── Description ──────────────────────────── */}
